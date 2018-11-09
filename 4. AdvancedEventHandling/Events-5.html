@@ -49,18 +49,18 @@
 						event.preventDefault();
 				}
 			})
-			// .off('click mousedown')
-			// .on('mousedown click', function(event)
-			// {	if (!event.isPropagationStopped() &&
-			// 		!event.isImmediatePropagationStopped() &&
-			// 		!event.isDefaultPrevented())
-			// 	{	showEventMessage.call(this, 
-			// 			{ eventType: event.type, suffix: '#2<br/>'});
-			// 	}
-			// })
-			// .on('selectstart', function(event) // no text selection on clickable elements in IE
-			// {	return false;			
-			// });
+			.off('click mousedown')
+			.on('mousedown click', function(event)
+			{	if (!event.isPropagationStopped() &&
+					!event.isImmediatePropagationStopped() &&
+					!event.isDefaultPrevented())
+				{	showEventMessage.call(this, 
+						{ eventType: event.type, suffix: '#2<br/>'});
+				}
+			})
+			.on('selectstart', function(event) // no text selection on clickable elements in IE
+			{	return false;			
+			});
 	});
 	</script>
 </html>
